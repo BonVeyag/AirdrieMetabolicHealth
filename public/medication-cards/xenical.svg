@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Xenical card image</title>
+  <desc id="desc">Illustrated card showing Xenical orlistat capsule medication.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7f9f6"/>
+      <stop offset="1" stop-color="#c8efea"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="675" fill="url(#bg)"/>
+  <rect x="50" y="50" width="1100" height="575" rx="28" fill="#ffffff" fill-opacity="0.74"/>
+  <rect x="130" y="220" width="390" height="86" rx="43" fill="#f6fffd" stroke="#97dfd3" stroke-width="4"/>
+  <text x="164" y="275" font-family="Arial, Helvetica, sans-serif" font-size="56" font-weight="700" fill="#0b5f58">Xenical</text>
+  <text x="136" y="346" font-family="Arial, Helvetica, sans-serif" font-size="36" fill="#166d67">Orlistat 120 mg capsules</text>
+  <text x="136" y="396" font-family="Arial, Helvetica, sans-serif" font-size="30" fill="#2c867f">Health Canada marketed</text>
+  <g transform="translate(760 145)">
+    <rect x="0" y="120" width="350" height="220" rx="30" fill="#e4faf5" stroke="#88d8cc" stroke-width="6"/>
+    <rect x="35" y="155" width="130" height="58" rx="29" fill="#0f7c73"/>
+    <rect x="155" y="155" width="130" height="58" rx="29" fill="#53c2b4"/>
+    <rect x="95" y="235" width="130" height="58" rx="29" fill="#0f7c73"/>
+    <rect x="215" y="235" width="130" height="58" rx="29" fill="#53c2b4"/>
+    <circle cx="280" cy="75" r="56" fill="#ffffff" stroke="#88d8cc" stroke-width="6"/>
+    <path d="M280 42 L286 66 L312 66 L291 80 L299 104 L280 88 L261 104 L269 80 L248 66 L274 66 Z" fill="#20a295"/>
+  </g>
+</svg>

@@ -1,0 +1,16 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F0FDFA" />
+  <rect x="64" y="64" width="1072" height="502" rx="28" fill="#FFFFFF" stroke="#CCFBF1" stroke-width="2" />
+  <circle cx="206" cy="196" r="70" fill="#0F766E" />
+  <path d="M180 196H232" stroke="white" stroke-width="14" stroke-linecap="round" />
+  <path d="M206 170V222" stroke="white" stroke-width="14" stroke-linecap="round" />
+  <text x="320" y="220" fill="#0F172A" font-size="64" font-family="Arial, sans-serif" font-weight="700">
+    Airdrie Metabolic Health
+  </text>
+  <text x="320" y="280" fill="#334155" font-size="34" font-family="Arial, sans-serif">
+    Physician-led weight loss and metabolic health
+  </text>
+  <text x="320" y="332" fill="#334155" font-size="34" font-family="Arial, sans-serif">
+    One Health (Airdrie), Alberta
+  </text>
+</svg>

@@ -1,0 +1,20 @@
+{
+  "crons": [
+    {
+      "path": "/api/class-signup/digest?phase=morning",
+      "schedule": "5 14 * * 2"
+    },
+    {
+      "path": "/api/class-signup/digest?phase=morning",
+      "schedule": "5 15 * * 2"
+    },
+    {
+      "path": "/api/class-signup/digest?phase=final",
+      "schedule": "15 2 * * 3"
+    },
+    {
+      "path": "/api/class-signup/digest?phase=final",
+      "schedule": "15 3 * * 3"
+    }
+  ]
+}

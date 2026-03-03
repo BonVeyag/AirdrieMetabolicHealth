@@ -1,0 +1,138 @@
+[
+  {
+    "slug": "obesity-code",
+    "title": "The Obesity Code",
+    "author": "Jason Fung",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "diabetes-code",
+    "title": "The Diabetes Code",
+    "author": "Jason Fung",
+    "coverSrc": "/book-covers/diabetes-code.jpg",
+    "source": "https://covers.openlibrary.org/b/id/14851433-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "why-we-get-sick",
+    "title": "Why We Get Sick",
+    "author": "Benjamin Bikman",
+    "coverSrc": "/book-covers/why-we-get-sick.jpg",
+    "source": "https://covers.openlibrary.org/b/id/10394551-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "complete-guide-to-fasting",
+    "title": "The Complete Guide to Fasting",
+    "author": "Jason Fung",
+    "coverSrc": "/book-covers/complete-guide-to-fasting.jpg",
+    "source": "https://covers.openlibrary.org/b/id/14685632-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "brain-energy",
+    "title": "Brain Energy",
+    "author": "Christopher M. Palmer",
+    "coverSrc": "/book-covers/brain-energy.jpg",
+    "source": "https://covers.openlibrary.org/b/id/13162337-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "carnivore-diet",
+    "title": "The Carnivore Diet",
+    "author": "Shawn Baker",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "atkins-new-diet-revolution",
+    "title": "Dr. Atkins' New Diet Revolution",
+    "author": "Robert C. Atkins",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "protein-power",
+    "title": "Protein Power",
+    "author": "Michael R. Eades",
+    "coverSrc": "/book-covers/protein-power.jpg",
+    "source": "https://covers.openlibrary.org/b/id/368019-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "why-we-get-fat",
+    "title": "Why We Get Fat",
+    "author": "Gary Taubes",
+    "coverSrc": "/book-covers/why-we-get-fat.jpg",
+    "source": "https://covers.openlibrary.org/b/id/6675596-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "good-calories-bad-calories",
+    "title": "Good Calories, Bad Calories",
+    "author": "Gary Taubes",
+    "coverSrc": "/book-covers/good-calories-bad-calories.jpg",
+    "source": "https://covers.openlibrary.org/b/id/8027557-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "art-and-science-low-carb-living",
+    "title": "The Art and Science of Low Carbohydrate Living",
+    "author": "Jeff S. Volek",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "fast-feast-repeat",
+    "title": "Fast. Feast. Repeat.",
+    "author": "Gin Stephens",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "oldest-cure-in-the-world",
+    "title": "The Oldest Cure in the World",
+    "author": "Steve Hendricks",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "eat-fat-and-grow-slim",
+    "title": "Eat Fat and Grow Slim",
+    "author": "Richard Mackarness",
+    "coverSrc": "/book-covers/eat-fat-and-grow-slim.jpg",
+    "source": "https://covers.openlibrary.org/b/id/14950162-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "high-fat-nutrition",
+    "title": "High Fat Nutrition",
+    "author": "Frederick J. Stare",
+    "coverSrc": null,
+    "source": null,
+    "provider": null
+  },
+  {
+    "slug": "fasting-cure",
+    "title": "The Fasting Cure",
+    "author": "Upton Sinclair",
+    "coverSrc": "/book-covers/fasting-cure.jpg",
+    "source": "https://covers.openlibrary.org/b/id/1990585-L.jpg",
+    "provider": "openlibrary"
+  },
+  {
+    "slug": "letter-on-corpulence",
+    "title": "Letter on Corpulence",
+    "author": "William Banting",
+    "coverSrc": "/book-covers/letter-on-corpulence.jpg",
+    "source": "https://covers.openlibrary.org/b/id/11531875-L.jpg",
+    "provider": "openlibrary"
+  }
+]

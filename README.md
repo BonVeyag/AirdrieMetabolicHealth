@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Airdrie Metabolic Health (v1)
 
-## Getting Started
+Production-ready Next.js App Router website for a physician-led weight loss and metabolic health program in Airdrie, Alberta.
 
-First, run the development server:
+## Stack
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS (v4)
+- Markdown content with frontmatter (`/content`)
+- Zod validation for form APIs
+- Local JSONL storage for submissions (`/data`)
+- SMTP email delivery via `nodemailer` (for class roster digests)
+
+## Implemented routes
+
+- `/` Home
+- `/how-it-works`
+- `/book`
+- `/book/success`
+- `/class`
+- `/class/success`
+- `/start`
+- `/pillars/[slug]` (Markdown-driven)
+- `/resources`
+- `/resources/[slug]` (Markdown-driven, references rendered from frontmatter)
+- `/community`
+- `/research`
+- `/research/[slug]` (Markdown-driven)
+- `/privacy`
+- `/disclaimer`
+
+## API routes
+
+- `POST /api/lead`
+- `POST /api/class-signup`
+- `GET /api/class-signup/digest?phase=morning|final&classDate=YYYY-MM-DD` (admin roster digest)
+
+Form submission endpoints:
+
+- validate server-side with `zod`
+- append JSON lines to local files:
+  - `data/leads.jsonl`
+  - `data/class-signups.jsonl`
+  - `data/class-digest-log.jsonl`
+
+## Local development (MacBook)
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Production build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+2. Start:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Environment variables
 
-## Deploy on Vercel
+Create `.env.local` (optional for local):
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+CLASS_ZOOM_LINK=https://us04web.zoom.us/j/78684861758?pwd=m46sJyczLlVpaQGVXC3Bbbe15zbzU9.1
+CLASS_ADMIN_EMAIL=thapa.rajat@gmail.com
+CLASS_DIGEST_TOKEN=replace-with-strong-token
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-smtp-user
+SMTP_PASS=your-smtp-password-or-app-password
+SMTP_FROM="Airdrie Metabolic Health <no-reply@yourdomain.ca>"
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For production, set `NEXT_PUBLIC_SITE_URL` to your public domain (for SEO metadata, sitemap, robots).
+If using Vercel cron, also set `CRON_SECRET` (or reuse `CLASS_DIGEST_TOKEN`) to secure `/api/class-signup/digest`.
+
+## Content editing
+
+All content lives under `/content`:
+
+- `content/pillars/*.md`
+- `content/resources/*.md`
+- `content/research/*.md`
+
+### Frontmatter shape (common)
+
+```yaml
+title: "..."
+description: "..."
+date: "YYYY-MM-DD" # optional
+tags:
+  - tag1
+  - tag2
+references:
+  - title: "Reference title"
+    source: "Journal or source" # optional
+    url: "https://..." # optional but recommended
+```
+
+### Research-only frontmatter fields
+
+```yaml
+status: "working paper" # or "submitted" | "published"
+abstract: "Short project abstract"
+```
+
+References render at the bottom of resource, pillar, and research detail pages.
+
+## Editable clinic placeholders
+
+Update clinic/contact/schedule/community URLs in:
+
+- `lib/site-config.ts`
+
+## SEO & crawl files
+
+- Global metadata + OpenGraph: `app/layout.tsx`
+- Sitemap: `app/sitemap.ts`
+- Robots: `app/robots.ts`
+
+## Weekly Classes automation
+
+- Class schedule is configured in `lib/class-program.ts` (recurring Tuesdays at 7:00 PM, starting first week of March).
+- `vercel.json` includes cron entries for:
+  - morning roster digest (Tuesday morning in Alberta time)
+  - final post-class digest (Tuesday evening in Alberta time)
+- Digest emails are sent to `CLASS_ADMIN_EMAIL` and contain registered names + Alberta health care numbers for the selected class date.
+
+## Validation and quality check
+
+Run:
+
+```bash
+npm run lint && npm run build
+```

@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fbfd;
+  --foreground: #0f172a;
+  --brand: #111827;
+  --surface: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: clamp(17px, 0.25vw + 16.5px, 18.5px);
 }
 
 body {
-  background: var(--background);
+  margin: 0;
+  background:
+    radial-gradient(circle at 12% -5%, rgba(125, 211, 252, 0.15), transparent 35%),
+    radial-gradient(circle at 88% 8%, rgba(110, 231, 183, 0.14), transparent 36%),
+    linear-gradient(180deg, #f7fafc 0%, #fbfdff 30%, #ffffff 68%, #f7fcfb 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-manrope), system-ui, sans-serif;
+  line-height: 1.72;
+  min-height: 100vh;
+}
+
+::selection {
+  background: rgba(14, 165, 233, 0.25);
+  color: #082f49;
+}
+
+.markdown {
+  color: #1e293b;
+}
+
+.markdown h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.markdown h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.markdown p,
+.markdown li {
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.markdown img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 1.5rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  background: #ffffff;
+}
+
+.markdown p + img {
+  margin-top: 0.75rem;
+}
+
+.markdown ul,
+.markdown ol {
+  margin: 0.75rem 0;
+  padding-left: 1.25rem;
+}
+
+.markdown a {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown blockquote {
+  margin: 1.25rem 0;
+  border-left: 3px solid #cbd5e1;
+  padding-left: 1rem;
+  color: #334155;
+}
+
+.markdown strong {
+  color: #0f172a;
+}
+
+@keyframes bookTickerRight {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.book-ticker-track {
+  animation: bookTickerRight 92s linear infinite;
+  will-change: transform;
+}
+
+.book-ticker-wrap:hover .book-ticker-track,
+.book-ticker-wrap:focus-within .book-ticker-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .book-ticker-track {
+    animation: none;
+    transform: translateX(0%);
+  }
 }
