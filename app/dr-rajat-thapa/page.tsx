@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 
 const canonicalUrl = "https://airdriemetabolichealth.org/dr-rajat-thapa";
 const headshotUrl = "/about/dr-rajat-thapa.jpg";
-const centaurUrl = "https://centaurmd.ca";
 
 export const metadata: Metadata = {
   title: "Dr Rajat Thapa MD PhD CCFP | Family Physician in Airdrie, Alberta",
@@ -39,25 +37,15 @@ export const metadata: Metadata = {
   },
 };
 
-const programsLinks = [
-  {
-    label: "Airdrie Metabolic Health",
-    href: "/",
-  },
-  {
-    label: "CentaurMD",
-    href: centaurUrl,
-  },
-];
-
 const pageContent = [
-  "Dr Rajat Thapa MD PhD CCFP is a family physician in Airdrie, Alberta who focuses on practical metabolic medicine rooted in long-term outcomes. Through Airdrie Metabolic Health, he helps patients improve weight, glucose, blood pressure, and overall health through sustained lifestyle change and careful medication support when appropriate.",
-  "After years in family medicine and internal medicine-adjacent care, Dr Rajat Thapa MD PhD CCFP is known for translating metabolic science into simple daily habits that patients can keep. In Airdrie, Alberta, he combines prevention-focused education with clinical follow-up to address the common drivers of chronic disease and to support people in building systems they can actually sustain.",
-  "At the center of this care model is care continuity. Dr Rajat Thapa MD PhD CCFP builds plans around nutrition, sleep, stress resilience, movement, and follow-up. He helps people understand why habits matter, how insulin resistance contributes to many modern health concerns, and where supportive interventions such as structured weight programs and medication can fit.",
-  "His clinical background includes behavioral science training from a behavioral neuroscience doctorate, which informs how he counsels people through real-life barriers and setbacks. In Airdrie, Alberta, patients can meet Dr Rajat Thapa MD PhD CCFP in person, where he emphasizes realistic, collaborative care rather than one-size-fits-all prescriptions.",
-  "Outside direct care, Dr Rajat Thapa MD PhD CCFP is active in education and community support, advocating for clear, evidence-informed pathways that are compassionate and scalable. Airdrie Metabolic Health reflects this mission: to make physician-led metabolic support feel human, practical, and accessible.",
-  "Dr Rajat Thapa MD PhD CCFP also co-founded CentaurMD to explore how software and care teams can improve access and adherence. If you are based in Alberta and searching for care that aligns medical expertise with daily habits, this approach is designed to meet people where they are and move them forward step by step.",
-  "Across every visit and program in Airdrie, Alberta, the focus remains the same: clear communication, practical goals, and measurable progress. Dr Rajat Thapa MD PhD CCFP encourages patients to partner in decision-making and to treat metabolic health as a long-term practice, not a short-lived campaign.",
+  "I am Dr. Rajat Thapa (MD, PhD, CCFP), a family physician in Airdrie, Alberta, practicing at One Health Associate Medical. I care for patients across the full scope of family medicine, and I am passionate about chronic disease management.",
+  "A big part of why I am building this community, Airdrie Metabolic Health, is what I see every day in clinic. Many chronic conditions have a common root cause: insulin resistance. Obesity, hypertension, type 2 diabetes, fatty liver, gout, sleep problems, fatigue, PCOS, infertility, depression, anxiety, joint pain, and many more conditions are linked to metabolic dysfunction. When we improve metabolic health, we can often improve several health markers at the same time, not just the number on the scale.",
+  "My approach is shaped by a growing body of metabolic research showing insulin resistance can sit upstream of many common modern diseases. In practice, that means focusing on fundamentals that truly move the needle: incorporating fasting in daily life, improving food quality and lowering carbohydrate load, meal timing when appropriate, strength and movement habits, sleep and stress recovery, and medications when they are truly useful, always with an emphasis on long-term maintenance over short-term extremes.",
+  "This work is personal for me too. I have seen diabetes in my own family and the consequences it can bring. I also lived the lifestyle side myself: I once had an A1C of 6.6 (in the diabetic range), brought it down, and have kept it consistently under 5.6 with lifestyle changes. Everyone's situation is different, but that experience made me even more committed to building plans that are realistic, sustainable, and compassionate.",
+  "Before studying medicine at the University of Calgary, I completed a PhD in behavioural neuroscience at the University of Lethbridge, investigating how reward circuits and learning shape habits and decision-making. That training shows up in my clinical work: lasting behavioural change is not about more willpower, it is about understanding the brain, the environment you live in, and creating a plan simple enough to repeat when life gets busy or stressful.",
+  "I also enjoy the procedural and point-of-care side of family medicine. I use bedside ultrasound frequently to speed up assessment and decision-making when it is helpful, from evaluating possible pneumonia to musculoskeletal assessments. In clinic, I regularly perform in-office procedures such as joint and soft-tissue injections (including hip and carpal tunnel injections), minor skin procedures, toenail resections, suturing, and IUD insertions. For IUDs, I use a paracervical block to make the experience significantly more comfortable, and many patients report pain in the 2-3/10 range with this approach.",
+  "I live in Airdrie with my family, and I care deeply about community and the small daily habits that keep people well. Outside of work, I enjoy time with family, biking, yoga, soccer, and software development (CentaurMD.ca).",
+  "If you are here because you want a clearer path with weight loss, diabetes remission, or metabolic health, I hope this site feels like a supportive starting point. My goal is to help you feel understood, give you a plan that fits real life, and walk alongside you as you build durable health.",
 ];
 
 const personSchema = {
@@ -90,12 +78,6 @@ export default function DrRajatThapaPage() {
         <p className="mt-5 max-w-3xl text-xl font-medium text-slate-800">
           Family Physician – Airdrie, Alberta
         </p>
-        <p className="mt-2 max-w-3xl text-base leading-7 text-slate-700">
-          Founder – Airdrie Metabolic Health
-        </p>
-        <p className="mt-2 max-w-3xl text-base leading-7 text-slate-700">
-          Founder – CentaurMD
-        </p>
       </section>
 
       <section className="mx-auto w-full max-w-6xl px-4 py-4 sm:px-6 lg:px-8">
@@ -127,26 +109,6 @@ export default function DrRajatThapaPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="overflow-hidden rounded-[2rem] border border-slate-200/90 bg-gradient-to-br from-white via-slate-50/80 to-cyan-50/35 p-6 shadow-[0_18px_45px_-34px_rgba(15,23,42,0.45)] sm:p-8">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Programs/Links</h2>
-          <ul className="mt-5 space-y-3 text-sm sm:text-base">
-            {programsLinks.map((link) => (
-              <li key={link.label}>
-                <Link
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="font-semibold text-cyan-800 underline decoration-cyan-300 underline-offset-4 transition hover:text-cyan-900"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
