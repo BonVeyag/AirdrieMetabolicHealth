@@ -103,9 +103,28 @@ export default function DrRajatThapaPage() {
 
             <div>
               <div className="space-y-4 text-[1.02rem] leading-8 text-slate-700">
-                {pageContent.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+                {pageContent.map((paragraph) => {
+                  if (!paragraph.includes("(CentaurMD.ca)")) {
+                    return <p key={paragraph}>{paragraph}</p>;
+                  }
+
+                  const [before, after] = paragraph.split("(CentaurMD.ca)");
+
+                  return (
+                    <p key={paragraph}>
+                      {before}(
+                      <a
+                        href="https://centaurmd.ca"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="font-medium text-cyan-700 underline decoration-cyan-300 underline-offset-2 transition hover:text-cyan-900"
+                      >
+                        CentaurMD.ca
+                      </a>
+                      ){after}
+                    </p>
+                  );
+                })}
               </div>
             </div>
           </div>

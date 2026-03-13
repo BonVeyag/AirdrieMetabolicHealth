@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MarkdownArticle } from "@/components/content/markdown-article";
 import { CtaStrip } from "@/components/ui/cta-strip";
+import { DrUnwinSugarInfographicsPanel } from "@/components/ui/dr-unwin-sugar-infographics-panel";
+import { MetabolicDiseaseMap } from "@/components/ui/metabolic-disease-map";
 import { PillarImageCarousel } from "@/components/ui/pillar-image-carousel";
+import { ThreeStepMealDecisionPanel } from "@/components/ui/three-step-meal-decision-panel";
 import { WeightLossMedicationPanels } from "@/components/ui/weight-loss-medication-panels";
 import { YouTubeVideoCarousel } from "@/components/ui/youtube-video-carousel";
 import { getCollectionEntry, getCollectionSlugs } from "@/lib/content";
@@ -109,6 +112,26 @@ export default async function PillarDetailPage({ params }: PillarPageProps) {
         bodyHtml={pillar.bodyHtml}
         references={pillar.references}
         eyebrow="Pillar"
+        bodyReplacements={
+          slug === "carb-restriction"
+            ? [
+                {
+                  pattern: /<p><img src="\/tcr-slides\/root-cause\.png"[^>]*><\/p>/,
+                  node: <MetabolicDiseaseMap />,
+                },
+                {
+                  pattern:
+                    /<h2>Three-Step Meal Decision Algorithm<\/h2>[\s\S]*?(?=<h3>Glycaemic index examples from common foods<\/h3>)/,
+                  node: <ThreeStepMealDecisionPanel />,
+                },
+                {
+                  pattern:
+                    /<h3>Glycaemic index examples from common foods<\/h3>[\s\S]*?(?=<h2>What is individualized<\/h2>)/,
+                  node: <DrUnwinSugarInfographicsPanel />,
+                },
+              ]
+            : undefined
+        }
         leadMedia={
           slug === "carb-restriction" ? (
             <PillarImageCarousel

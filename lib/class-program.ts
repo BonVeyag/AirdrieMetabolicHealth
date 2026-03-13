@@ -5,10 +5,10 @@ export const CLASS_START_DATE = "2026-04-07";
 export const CLASS_BOOKING_WEEKS = 6;
 export const CLASS_DAY_UTC = 2;
 export const CLASS_NAME = "Community Metabolic Health";
-export const CLASS_TIME_LABEL = "7:00 PM";
-export const CLASS_END_TIME_LABEL = "7:30 PM";
-export const CLASS_TIME_RANGE_LABEL = "7:00 - 7:30 PM";
-export const CLASS_SESSION_LABEL = "Tuesdays at 7:00 PM (Zoom)";
+export const CLASS_TIME_LABEL = "8:00 PM";
+export const CLASS_END_TIME_LABEL = "8:30 PM";
+export const CLASS_TIME_RANGE_LABEL = "8:00 - 8:30 PM";
+export const CLASS_SESSION_LABEL = "Tuesdays at 8:00 PM (Zoom)";
 
 export type ClassSession = {
   dateKey: string;
@@ -34,7 +34,7 @@ export function getClassGoogleCalendarUrl({ zoomLink }: ClassCalendarLinkOptions
       `Zoom link: ${zoomLink}\n` +
       "Bring your Alberta Health Care card number.",
     location: "Zoom",
-    dates: `${compactStartDate}T190000/${compactStartDate}T193000`,
+    dates: `${compactStartDate}T200000/${compactStartDate}T203000`,
     ctz: CLASS_TIME_ZONE,
     recur: "RRULE:FREQ=WEEKLY;BYDAY=TU",
   });

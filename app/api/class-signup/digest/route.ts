@@ -40,7 +40,7 @@ const digestLogSchema = z.object({
 type DigestPhase = (typeof PHASES)[number];
 const DIGEST_TARGET_HOUR: Record<DigestPhase, number> = {
   morning: 8,
-  final: 20,
+  final: 21,
 };
 
 function isAuthorized(request: Request) {

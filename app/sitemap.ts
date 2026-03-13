@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { conditionGuides } from "@/lib/condition-guides";
 import { getCollectionSlugs } from "@/lib/content";
 import { siteConfig } from "@/lib/site-config";
 
@@ -32,6 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicRoutes = [
     ...pillarSlugs.map((slug) => `/pillars/${slug}`),
     ...resourceSlugs.map((slug) => `/resources/${slug}`),
+    ...conditionGuides.map((guide) => `/resources/conditions/${guide.slug}`),
     ...researchSlugs.map((slug) => `/research/${slug}`),
   ];
 

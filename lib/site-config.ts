@@ -1,3 +1,5 @@
+import { CLASS_TIME_LABEL } from "@/lib/class-program";
+
 const clinicAddressLine1 = "836 1 Ave NW #201, Airdrie";
 const clinicAddressLine2 = "AB T4B 0V2";
 
@@ -19,7 +21,7 @@ export const siteConfig = {
     classSchedule: [
       {
         day: "Tuesday",
-        time: "7:00 PM",
+        time: CLASS_TIME_LABEL,
       },
     ],
     classCapacityMessage:

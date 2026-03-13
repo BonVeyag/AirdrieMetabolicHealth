@@ -21,6 +21,7 @@ export type PillarImageSlide = {
 type PillarImageCarouselProps = {
   slides: PillarImageSlide[];
   ariaLabel?: string;
+  viewportClassName?: string;
 };
 
 const SWIPE_THRESHOLD = 40;
@@ -29,6 +30,7 @@ const AUTO_ROTATE_MS = 6000;
 export function PillarImageCarousel({
   slides,
   ariaLabel = "Pillar image carousel",
+  viewportClassName = "h-[18rem] sm:h-[23rem]",
 }: PillarImageCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const touchStartX = useRef<number | null>(null);
@@ -132,7 +134,7 @@ export function PillarImageCarousel({
       className="overflow-hidden rounded-[1.75rem] border border-slate-200/90 bg-white shadow-[0_18px_42px_-30px_rgba(15,23,42,0.55)]"
     >
       <div
-        className="relative h-[18rem] sm:h-[23rem]"
+        className={`relative ${viewportClassName}`}
         tabIndex={0}
         onKeyDown={handleKeyDown}
         onTouchStart={handleTouchStart}

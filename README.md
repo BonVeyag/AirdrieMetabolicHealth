@@ -139,7 +139,7 @@ Update clinic/contact/schedule/community URLs in:
 
 ## Weekly Classes automation
 
-- Class schedule is configured in `lib/class-program.ts` (recurring Tuesdays at 7:00 PM, starting first week of March).
+- Class schedule is configured in `lib/class-program.ts` (recurring Tuesdays at 8:00 PM, starting first week of April).
 - `vercel.json` includes cron entries for:
   - morning roster digest (Tuesday morning in Alberta time)
   - final post-class digest (Tuesday evening in Alberta time)

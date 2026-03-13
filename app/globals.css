@@ -78,6 +78,10 @@ body {
   margin-top: 0.75rem;
 }
 
+.markdown p + p img {
+  margin-top: 1.5rem;
+}
+
 .markdown ul,
 .markdown ol {
   margin: 0.75rem 0;

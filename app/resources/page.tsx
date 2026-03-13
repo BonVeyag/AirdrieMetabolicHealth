@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CtaStrip } from "@/components/ui/cta-strip";
+import { ConditionGuideGrid } from "@/components/ui/condition-guide-grid";
 import { FeatureCard } from "@/components/ui/feature-card";
 
 export const metadata: Metadata = {
@@ -53,6 +54,8 @@ export default function ResourcesPage() {
           />
         </div>
       </section>
+
+      <ConditionGuideGrid />
 
       <section className="mt-10">
         <CtaStrip

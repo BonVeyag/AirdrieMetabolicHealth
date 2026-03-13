@@ -34,10 +34,10 @@ const videoRecommendations: VideoRecommendation[] = [
     youtubeUrl: "https://www.youtube.com/watch?v=wBsnk2PtPeo",
   },
   {
-    id: "L9ZLJI-1ifs",
+    id: "1rz-8H_i1wA",
     title: "Red Meat and Health",
     speaker: "Nina Teicholz",
-    youtubeUrl: "https://www.youtube.com/watch?v=L9ZLJI-1ifs",
+    youtubeUrl: "https://www.youtube.com/watch?v=1rz-8H_i1wA",
   },
   {
     id: "fL5-9ZxamXc",
@@ -112,6 +112,12 @@ const videoRecommendations: VideoRecommendation[] = [
     title: "Ruminating on Protein: Plants & Animals",
     speaker: "Dr. Peter Ballerstedt",
     youtubeUrl: "https://www.youtube.com/watch?v=lzsEqV0Bjcs",
+  },
+  {
+    id: "mA6wlEjJ2X4",
+    title: "GLP-1 Drugs: Consequences and Considerations",
+    speaker: "Ben Bikman",
+    youtubeUrl: "https://www.youtube.com/watch?v=mA6wlEjJ2X4",
   },
 ];
 
