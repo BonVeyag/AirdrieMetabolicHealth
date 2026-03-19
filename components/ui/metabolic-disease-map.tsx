@@ -43,7 +43,7 @@ const pillStylesByGroup: Record<
 const mapLabelBySlug: Record<string, string> = {
   "type-2-diabetes": "Type 2 Diabetes",
   "type-1-diabetes": "Type 1 Diabetes",
-  "low-testosterone": "Low Testosterone",
+  "erectile-dysfunction": "Erectile Dysfunction",
   hypertension: "Hypertension",
   "high-cholesterol": "Cholesterol",
   "depression-and-anxiety": "Depression / Anxiety",
@@ -83,7 +83,7 @@ const approximatePrevalenceOrder = [
   "adhd",
   "cancer",
   "pcos-and-infertility",
-  "low-testosterone",
+  "erectile-dysfunction",
   "gout",
   "psoriasis",
   "bipolar-disorder",

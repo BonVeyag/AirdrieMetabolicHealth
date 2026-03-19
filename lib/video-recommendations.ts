@@ -119,6 +119,18 @@ const videoRecommendations: VideoRecommendation[] = [
     speaker: "Ben Bikman",
     youtubeUrl: "https://www.youtube.com/watch?v=mA6wlEjJ2X4",
   },
+  {
+    id: "_oz6tNaMxTQ",
+    title: "'Blinded...'",
+    speaker: "Dr. James Muecke AM",
+    youtubeUrl: "https://www.youtube.com/watch?v=_oz6tNaMxTQ&t=1860s",
+  },
+  {
+    id: "bzsyHGoupUU",
+    title: "What predicts drug-free type 2 diabetes remission?",
+    speaker: "Professor Roy Taylor",
+    youtubeUrl: "https://www.youtube.com/watch?v=bzsyHGoupUU",
+  },
 ];
 
 export const topVideoRecommendations = videoRecommendations.slice(0, 5);

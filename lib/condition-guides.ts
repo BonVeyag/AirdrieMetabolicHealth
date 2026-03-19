@@ -42,6 +42,37 @@ export type ConditionGuideListItem = {
   href: string;
 };
 
+const conditionGuideGridOrder = [
+  "obesity",
+  "hypertension",
+  "type-2-diabetes",
+  "high-cholesterol",
+  "fatty-liver",
+  "chronic-pain",
+  "depression-and-anxiety",
+  "gerd",
+  "obstructive-sleep-apnea",
+  "chronic-kidney-disease",
+  "erectile-dysfunction",
+  "heart-disease",
+  "osteoporosis-bone-health",
+  "autoimmune-diseases",
+  "adhd",
+  "cancer",
+  "pcos-and-infertility",
+  "gout",
+  "psoriasis",
+  "bipolar-disorder",
+  "alzheimers-disease",
+  "seizure-disorder-epilepsy",
+  "type-1-diabetes",
+  "parkinsons-disease",
+] as const;
+
+const conditionGuideGridRank = new Map<string, number>(
+  conditionGuideGridOrder.map((slug, index) => [slug, index]),
+);
+
 function internalResource(
   title: string,
   href: string,
@@ -141,6 +172,21 @@ const type1DiabetesVideos: VideoRecommendation[] = [
   },
 ];
 
+const erectileDysfunctionVideos: VideoRecommendation[] = [
+  {
+    id: "Gfmq33FmmdQ",
+    title: "Staying on Top of the Data: Insulin Resistance and Sexual Health",
+    speaker: "Dr. Priyanka Wali",
+    youtubeUrl: "https://www.youtube.com/watch?v=Gfmq33FmmdQ",
+  },
+  {
+    id: "X1UltRPfMqs",
+    title: "7 Causes of Erectile Dysfunction You Can Fix",
+    speaker: "Ken D Berry MD",
+    youtubeUrl: "https://www.youtube.com/watch?v=X1UltRPfMqs",
+  },
+];
+
 export const conditionGuideGroups: Array<{
   name: ConditionGuideGroup;
   description: string;
@@ -212,6 +258,53 @@ export const conditionGuides: ConditionGuide[] = [
         "Obesity Canada",
         "https://obesitycanada.ca/",
         "Patient-centered Canadian guidance on obesity as a chronic disease.",
+      ),
+    ],
+  },
+  {
+    slug: "erectile-dysfunction",
+    title: "Erectile Dysfunction",
+    group: "Metabolic and hormonal",
+    cardDescription:
+      "Often a vascular warning sign linked with high sugars, insulin resistance, and reduced penile blood flow.",
+    simpleDescription:
+      "Erectile dysfunction (ED) means trouble getting or keeping an erection firm enough for sex. It is common, treatable, and often has more than one contributor. In many men with insulin resistance, prediabetes, or diabetes, ED is not just a testosterone issue. Repeated high sugars can injure the endothelial lining of small blood vessels, reduce nitric oxide signaling, and make it harder to rapidly increase blood flow to the penis. High sugars can also damage the autonomic nerves involved in sexual arousal and erection.",
+    whyItMatters:
+      "The penile circulation depends on very small arteries and microvascular blood flow, so ED can show up before bigger vascular problems become obvious. Sometimes it is one of the earliest clues that diabetes, prediabetes, high blood pressure, sleep apnea, smoking, medication effects, or broader cardiometabolic dysfunction are already affecting the circulation.",
+    focusPoints: [
+      "Check for chronic glucose exposure. A1C, fasting glucose, waist size, and insulin-resistance patterns matter because persistent high sugars can damage penile microvasculature and the nerves that support erection.",
+      "Review the full picture rather than assuming one cause: blood pressure, lipids, smoking, alcohol, sleep apnea, depression, relationship stress, medications, and testosterone can all contribute.",
+      "Treat ED as both a quality-of-life issue and a vascular clue. Early evaluation can improve sexual function and sometimes uncover diabetes or cardiovascular risk before larger complications appear.",
+    ],
+    videos: erectileDysfunctionVideos,
+    resources: [
+      internalResource(
+        "Type 2 Diabetes",
+        "/resources/conditions/type-2-diabetes",
+        "Why chronic high sugars can damage small blood vessels, nerves, and long-term sexual function.",
+        "Article",
+      ),
+      internalResource(
+        "Therapeutic carbohydrate restriction",
+        "/pillars/carb-restriction",
+        "Food-quality and glycemic-load strategies that may support glucose control, waist size, and triglycerides.",
+        "Pillar",
+      ),
+      internalResource(
+        "Blood pressure and weight loss",
+        "/resources/blood-pressure-and-weight-loss",
+        "Circulation, blood pressure, and body-composition changes often matter alongside glucose control.",
+        "Article",
+      ),
+      externalResource(
+        "NIDDK Erectile Dysfunction (ED)",
+        "https://www.niddk.nih.gov/health-information/urologic-diseases/erectile-dysfunction",
+        "NIH patient overview of ED symptoms, causes, diagnosis, and treatment.",
+      ),
+      externalResource(
+        "American Diabetes Association: Erectile Dysfunction",
+        "https://diabetes.org/health-wellness/sexual-health/erectile-disfunction",
+        "Diabetes-focused overview of ED, including blood-vessel and nerve damage from chronically high glucose.",
       ),
     ],
   },
@@ -1144,32 +1237,25 @@ export const conditionGuides: ConditionGuide[] = [
   },
 ];
 
-const lowTestosteroneListItem: ConditionGuideListItem = {
-  slug: "low-testosterone",
-  title: "Low Testosterone",
-  group: "Metabolic and hormonal",
-  cardDescription:
-    "Often travels with obesity, sleep disruption, and metabolic dysfunction. Opens the obesity guide.",
-  href: "/resources/conditions/obesity",
-};
-
 export const conditionGuideListItems: ConditionGuideListItem[] = (() => {
-  const items = conditionGuides.map((guide) => ({
-    slug: guide.slug,
-    title: guide.title,
-    group: guide.group,
-    cardDescription: guide.cardDescription,
-    href: `/resources/conditions/${guide.slug}`,
-  }));
+  return conditionGuides
+    .map((guide) => ({
+      slug: guide.slug,
+      title: guide.title,
+      group: guide.group,
+      cardDescription: guide.cardDescription,
+      href: `/resources/conditions/${guide.slug}`,
+    }))
+    .sort((left, right) => {
+      const leftRank = conditionGuideGridRank.get(left.slug) ?? Number.MAX_SAFE_INTEGER;
+      const rightRank = conditionGuideGridRank.get(right.slug) ?? Number.MAX_SAFE_INTEGER;
 
-  const obesityIndex = items.findIndex((item) => item.slug === "obesity");
-  if (obesityIndex >= 0) {
-    items.splice(obesityIndex + 1, 0, lowTestosteroneListItem);
-  } else {
-    items.push(lowTestosteroneListItem);
-  }
+      if (leftRank !== rightRank) {
+        return leftRank - rightRank;
+      }
 
-  return items;
+      return left.title.localeCompare(right.title);
+    });
 })();
 
 export function getConditionGuide(slug: string) {

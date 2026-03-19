@@ -23,7 +23,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/resources/videos/stress",
     "/resources/facebook-groups",
     "/resources/websites",
-    "/dr-rajat-thapa",
+    "/about-dr-rajat-thapa",
     "/community",
     "/research",
     "/privacy",

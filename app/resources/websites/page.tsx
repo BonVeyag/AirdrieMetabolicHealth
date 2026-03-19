@@ -65,6 +65,13 @@ const recommendedWebsites = [
       "Clinical practice guidelines for diabetes prevention, management, and risk reduction.",
     previewImageSrc: "/website-previews/diabetes-canada-guidelines.png",
   },
+  {
+    name: "Newcastle Type 2 Diabetes Reversal",
+    href: "https://www.ncl.ac.uk/magres/research/diabetes/reversal/#publicinformation",
+    description:
+      "Public information from Newcastle University on type 2 diabetes reversal, remission, and the underlying research program.",
+    previewImageSrc: "/website-previews/newcastle-diabetes-reversal.jpg",
+  },
 ];
 
 export default function RecommendedWebsitesPage() {

@@ -145,7 +145,7 @@ Update clinic/contact/schedule/community URLs in:
   - final post-class digest (Tuesday evening in Alberta time)
 - Digest emails are sent to `CLASS_ADMIN_EMAIL` and contain registered names + Alberta health care numbers for the selected class date.
 
-After deploy, submit `/dr-rajat-thapa` in Google Search Console for indexing.
+After deploy, submit `/about-dr-rajat-thapa` in Google Search Console for indexing.
 
 ## Validation and quality check
 

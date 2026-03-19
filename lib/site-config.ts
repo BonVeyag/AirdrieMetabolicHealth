@@ -39,7 +39,7 @@ export const siteConfig = {
     { href: "/community", label: "Community" },
     { href: "/start", label: "Tools" },
     { href: "/resources", label: "Resources" },
-    { href: "/dr-rajat-thapa", label: "About" },
+    { href: "/about-dr-rajat-thapa", label: "About" },
   ],
 };
 

@@ -67,8 +67,7 @@ export function DrUnwinSugarInfographicsPanel() {
         <p className="mt-4 text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
           Low Carb GP Dr David Unwin has produced practical infographics showing how
           typical portions of common foods can create a surprisingly large blood
-          glucose effect, often illustrated as teaspoons of sugar. PHC UK also adapted
-          these into the Freshwell App&apos;s interactive &quot;Sugraphics.&quot;
+          glucose effect, often illustrated as teaspoons of sugar.
         </p>
       </div>
 
@@ -90,18 +89,6 @@ export function DrUnwinSugarInfographicsPanel() {
           </span>
         ))}
       </div>
-
-      <p className="mt-6 text-sm leading-6 text-slate-600">
-        Source:{" "}
-        <a
-          href="https://phcuk.org/sugar/"
-          target="_blank"
-          rel="noreferrer"
-          className="font-semibold text-slate-900 underline decoration-slate-300 underline-offset-4 transition hover:text-amber-700"
-        >
-          PHC UK Sugar Infographics
-        </a>
-      </p>
     </section>
   );
 }
